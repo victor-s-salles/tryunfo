@@ -17,6 +17,9 @@ class App extends React.Component {
       hasTrunfo: false,
       isSaveButtonDisabled: true,
       cards: [],
+      findName: '',
+      findRarity: 'todas',
+
     };
   }
 
@@ -107,9 +110,31 @@ class App extends React.Component {
     console.log(cards);
   };
 
+  filterAll = () => {
+    const { cards, findName, findRarity } = this.state;
+
+    if (findName && (findRarity === 'todas')) {
+      console.log('Procura nomes');
+      return cards.filter((element) => (element.cardName.toLowerCase()
+        .includes(findName.toLowerCase())));
+    }
+    if (!findName && (findRarity !== 'todas')) {
+      console.log('procura raridades');
+      return cards.filter((element) => (element.cardRare === findRarity));
+    }
+    if (findName && (findRarity !== 'todas')) {
+      console.log('procura nomes e raridaes');
+      return cards.filter((element) => (element.cardName.toLowerCase()
+        .includes(findName.toLowerCase())))
+        .filter((element) => (element.cardRare === findRarity));
+    }
+    return cards;
+  };
+
   render() {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3, cardRare,
-      cardImage, cardTrunfo, hasTrunfo, isSaveButtonDisabled, cards } = this.state;
+      cardImage, cardTrunfo, hasTrunfo, isSaveButtonDisabled,
+      findName, findRarity } = this.state;
     return (
       <div className="principal">
         <h1 className="title-principal">Tryunfo</h1>
@@ -143,8 +168,33 @@ class App extends React.Component {
         </div>
         <div>
           <h3>Todas as cartas</h3>
+          <label htmlFor="findName">
+            Pesquisar nome:
+            <input
+              onChange={ this.handleChange }
+              type="text"
+              id="findName"
+              name="findName"
+              data-testid="name-filter"
+              value={ findName }
+            />
+          </label>
+          <label htmlFor="findRarity">
+            <select
+              name="findRarity"
+              id="findRarity"
+              onChange={ this.handleChange }
+              value={ findRarity }
+              data-testid="rare-filter"
+            >
+              <option value="todas">todas</option>
+              <option value="normal">normal</option>
+              <option value="raro">raro</option>
+              <option value="muito raro">muito raro</option>
+            </select>
+          </label>
           <div>
-            {cards.map((element, index) => (
+            {this.filterAll().map((element, index) => (
               <div key={ index }>
                 <Card
                   cardName={ element.cardName }
