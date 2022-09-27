@@ -75,6 +75,19 @@ class App extends React.Component {
     });
   };
 
+  handleDeleteCard = (cardClicked) => {
+    const { cards } = this.state;
+    const { cardTrunfo } = cardClicked;
+    if (cardTrunfo) {
+      this.setState({ hasTrunfo: false });
+    }
+    const newCards = cards;
+    const index = newCards.indexOf(cardClicked);
+    newCards.splice(index, 1);
+    console.log(cardClicked);
+    this.setState({ cards: newCards });
+  };
+
   onSaveButtonClick = () => {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3,
       cardRare, cardImage, cardTrunfo, cards } = this.state;
@@ -132,17 +145,26 @@ class App extends React.Component {
           <h3>Todas as cartas</h3>
           <div>
             {cards.map((element, index) => (
-              <Card
-                key={ index }
-                cardName={ element.cardName }
-                cardDescription={ element.cardDescription }
-                cardAttr1={ element.cardAttr1 }
-                cardAttr2={ element.cardAttr2 }
-                cardAttr3={ element.cardAttr3 }
-                cardImage={ element.cardImage }
-                cardRare={ element.cardRare }
-                cardTrunfo={ element.cardTrunfo }
-              />))}
+              <div key={ index }>
+                <Card
+                  cardName={ element.cardName }
+                  cardDescription={ element.cardDescription }
+                  cardAttr1={ element.cardAttr1 }
+                  cardAttr2={ element.cardAttr2 }
+                  cardAttr3={ element.cardAttr3 }
+                  cardImage={ element.cardImage }
+                  cardRare={ element.cardRare }
+                  cardTrunfo={ element.cardTrunfo }
+                />
+                <button
+                  data-testid="delete-button"
+                  type="submit"
+                  onClick={ () => this.handleDeleteCard(element) }
+                >
+                  Excluir
+
+                </button>
+              </div>))}
 
           </div>
         </div>
