@@ -6,13 +6,15 @@ class Card extends React.Component {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3,
       cardRare, cardImage, cardTrunfo } = this.props;
     return (
-      <div>
-        <h3 data-testid="name-card">{cardName}</h3>
+      <div className="card-div">
+        <h3 className="name-card" data-testid="name-card">{cardName}</h3>
         <img src={ cardImage } data-testid="image-card" alt={ cardName } />
         <p data-testid="description-card">{cardDescription}</p>
-        <h5 data-testid="attr1-card">{cardAttr1}</h5>
-        <h5 data-testid="attr2-card">{cardAttr2}</h5>
-        <h5 data-testid="attr3-card">{cardAttr3}</h5>
+        <div className="div-attr">
+          <h5 data-testid="attr1-card">{cardAttr1}</h5>
+          <h5 data-testid="attr2-card">{cardAttr2}</h5>
+          <h5 data-testid="attr3-card">{cardAttr3}</h5>
+        </div>
         <h4 data-testid="rare-card">{cardRare}</h4>
         {cardTrunfo && <h3 data-testid="trunfo-card">Super Trunfo</h3> }
       </div>
@@ -30,4 +32,5 @@ Card.propTypes = {
   cardRare: PropTypes.string.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
 };
+
 export default Card;
