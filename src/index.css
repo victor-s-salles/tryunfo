@@ -29,46 +29,6 @@ form {
 .forms-cards {
   display: flex;
 }
-
-.card {
-  /* border: 2px solid black; */
-  width: 270px;
-  height: 400px;
-  background-image: url(./images/carta\ \(1\).png);
-  background-size: cover;
-}
-
-.name-card {
-  margin-left: 40px;
-  margin-top: 32px;
-  color: white;
-}
-
-.card-div img {
-  width: 200px;
-  height: 142px;
-  margin-left: 40px;
-}
-
-.div-attr {
-  margin-top: 55px;
-}
-.card-div h5 {
-  margin-left: 210px;
-  color: white;
-  margin-top: 3px;
-  margin-bottom: 10px;
-}
-
-.card-div h4 {
-  margin-left: 160px;
-  margin-top: -5px;
-  color: green;
-}
-
-.card-div p {
-  margin-left: 30px;
-  transform: rotate(-7deg);
-  color: white;
-  position: fixed;
+.card-div {
+  border: 2px solid black;
 }

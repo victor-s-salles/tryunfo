@@ -45,6 +45,14 @@ class App extends React.Component {
     }
   };
 
+  validadeTrunfo = () => {
+    const { cardTrunfo } = this.state;
+
+    if (cardTrunfo) {
+      this.setState({ hasTrunfo: true });
+    }
+  };
+
   handleChange = ({ target }) => {
     const { name } = target;
     const value = (target.type === 'checkbox') ? target.checked : target.value;
@@ -54,6 +62,7 @@ class App extends React.Component {
   };
 
   resetForn = () => {
+    this.validadeTrunfo();
     this.setState({
       cardName: '',
       cardDescription: '',
@@ -87,7 +96,7 @@ class App extends React.Component {
 
   render() {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3, cardRare,
-      cardImage, cardTrunfo, hasTrunfo, isSaveButtonDisabled } = this.state;
+      cardImage, cardTrunfo, hasTrunfo, isSaveButtonDisabled, cards } = this.state;
     return (
       <div className="principal">
         <h1 className="title-principal">Tryunfo</h1>
@@ -117,6 +126,24 @@ class App extends React.Component {
               cardRare={ cardRare }
               cardTrunfo={ cardTrunfo }
             />
+          </div>
+        </div>
+        <div>
+          <h3>Todas as cartas</h3>
+          <div>
+            {cards.map((element, index) => (
+              <Card
+                key={ index }
+                cardName={ element.cardName }
+                cardDescription={ element.cardDescription }
+                cardAttr1={ element.cardAttr1 }
+                cardAttr2={ element.cardAttr2 }
+                cardAttr3={ element.cardAttr3 }
+                cardImage={ element.cardImage }
+                cardRare={ element.cardRare }
+                cardTrunfo={ element.cardTrunfo }
+              />))}
+
           </div>
         </div>
       </div>
