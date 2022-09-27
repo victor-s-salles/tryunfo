@@ -19,7 +19,7 @@ class App extends React.Component {
       cards: [],
       findName: '',
       findRarity: 'todas',
-
+      trunfoFind: false,
     };
   }
 
@@ -111,7 +111,11 @@ class App extends React.Component {
   };
 
   filterAll = () => {
-    const { cards, findName, findRarity } = this.state;
+    const { cards, findName, findRarity, trunfoFind } = this.state;
+
+    if (trunfoFind) {
+      return cards.filter((element) => (element.cardTrunfo));
+    }
 
     if (findName && (findRarity === 'todas')) {
       console.log('Procura nomes');
@@ -134,7 +138,7 @@ class App extends React.Component {
   render() {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3, cardRare,
       cardImage, cardTrunfo, hasTrunfo, isSaveButtonDisabled,
-      findName, findRarity } = this.state;
+      findName, findRarity, trunfoFind } = this.state;
     return (
       <div className="principal">
         <h1 className="title-principal">Tryunfo</h1>
@@ -177,6 +181,7 @@ class App extends React.Component {
               name="findName"
               data-testid="name-filter"
               value={ findName }
+              disabled={ trunfoFind }
             />
           </label>
           <label htmlFor="findRarity">
@@ -186,12 +191,24 @@ class App extends React.Component {
               onChange={ this.handleChange }
               value={ findRarity }
               data-testid="rare-filter"
+              disabled={ trunfoFind }
             >
               <option value="todas">todas</option>
               <option value="normal">normal</option>
               <option value="raro">raro</option>
               <option value="muito raro">muito raro</option>
             </select>
+          </label>
+          <label htmlFor="trunfoFind">
+            Super Trunfo
+            <input
+              type="checkbox"
+              name="trunfoFind"
+              id="trunfoFind"
+              data-testid="trunfo-filter"
+              onChange={ this.handleChange }
+              checked={ trunfoFind }
+            />
           </label>
           <div>
             {this.filterAll().map((element, index) => (
