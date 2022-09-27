@@ -15,20 +15,201 @@ code {
 form {
   display: flex;
   flex-direction: column;
-  border: 2px solid black;
+  border: 3px solid #036B52;
   margin-left: 10px;
+  border-radius: 4px;
 }
 
 .principal {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  
 }
 .title-principal {
   flex-direction: column;
 }
 .forms-cards {
   display: flex;
+  justify-content:space-around;
+  border-radius: 15px;
+  background-color: white;
+  width: 70%;
+  height: 700px;
+  margin-bottom: 25px;
 }
 .card-div {
+  border: 10px solid #036B52;
+  border-top: 25px solid #036B52;
+  border-radius: 10px;
+  margin: 10px;
+}
+body {
+  background-color: #052727;
+}
+
+.logoImg {
+  width: 400px;
+  align-self: center;
+}
+.divLogoImg {
+  display: flex;
+  justify-content: center;
+}
+
+.divForms {
+  display: flex;
+  justify-content: center;
+}
+
+.titleForms {
+  color: #2FC18C;
+  font-family: 'Epilogue';
+  font-style: italic;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 29px;
+  text-transform: uppercase;
+}
+
+.card {
+  /* border: 2px solid red; */
+  height: 100%;
+  margin-bottom: 10px;
+}
+
+.card-div img {
+  width: 268px;
+  height: 210px;
+  margin-top: -28px;
+  }
+
+.cardsDivPai {
+  width: 70%;
+  background-color: white;
+  display: flex;
+}
+
+.todasCartas {
+  background-color: white;
+  width: 70%;
   border: 2px solid black;
+  border-radius: 12px;
+}
+
+
+.paiTodasCartas {
+  display: flex;
+  justify-content: center;
+}
+
+.previewTitle {
+  font-family: 'Epilogue';
+  font-style: italic;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 29px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #2FC18C;
+}
+.name-card {
+  color: white;
+  background-color: #444955;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  text-align: end;
+  padding: 5px;
+  padding-right: 10px;
+  font-family: 'Epilogue';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 27.2518px;
+  line-height: 28px;
+  margin-top: -5px;
+
+}
+
+.imgCardDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.div-attr h5 {
+  text-align: end;
+  margin-right: 10px;
+  font-family: 'Epilogue';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 150%;
+  background-color: #052727;
+  /* margin-left: 230px; */
+  color: aliceblue;
+  padding-right: 10px;
+  border-bottom-right-radius: 7px;
+  border-top-right-radius: 7px;
+}
+.card-div p {
+  /* transform: rotate(-7deg); */
+
+  }
+
+.card-rare {
+  margin-left: 10px;
+  font-size: large;
+  color: #036B52;
+} 
+
+.super-trunfo {
+  text-align: center;
+  font-size: 22px;
+  color: #036B52;
+  border: #052727 solid 4px;
+  border-radius: 5px;
+  margin-left: 40px ;
+  margin-right: 40px;
+}
+ 
+form label {
+  margin: 18px;
+  display: flex;
+}
+
+form label input {
+  margin-left: 10px;
+}
+
+form label textarea {
+  margin-left: 10px;
+}
+
+form label select {
+  margin-left: 10px;
+}
+.todasCartas {
+  padding-bottom: 25px;
+}
+
+.todasCartas h3{
+  margin-left: 10px;
+  text-align: center;
+  font-size: 25px;
+  color: #036B52;
+}
+
+.todasCartas label {
+  margin-left: 10px;
+  font-size: 18px;
+  color: #036B52;
+}
+.todasCartas label input {
+  margin-left: 10px;
+  font-size: 18px;
+  color: #036B52;
+}
+.todasCartas label select {
+  margin-left: 10px;
+  font-size: 18px;
+  color: #036B52;
 }

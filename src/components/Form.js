@@ -19,7 +19,7 @@ class Form extends React.Component {
     } = this.props;
     return (
       <div>
-        <h3>ADICIONE NOVA CARTA</h3>
+        <h3 className="titleForms">ADICIONE NOVA CARTA</h3>
         <form action="">
           <label htmlFor="cardName">
             Nome
@@ -97,9 +97,9 @@ class Form extends React.Component {
               onChange={ onInputChange }
               value={ cardRare }
             >
-              <option value="normal">Normal</option>
-              <option value="raro">Raro</option>
-              <option value="muito raro">Muito raro</option>
+              <option value="Normal">Normal</option>
+              <option value="Raro">Raro</option>
+              <option value="Muito Raro">Muito raro</option>
             </select>
           </label>
           {!hasTrunfo && (
