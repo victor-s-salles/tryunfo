@@ -88,11 +88,14 @@ body {
   width: 70%;
   background-color: white;
   display: flex;
+  height: auto;
+  flex-direction: row;
 }
 
 .todasCartas {
   background-color: white;
   width: 70%;
+  height: auto;
   border: 2px solid black;
   border-radius: 12px;
 }
@@ -113,22 +116,7 @@ body {
   text-transform: uppercase;
   color: #2FC18C;
 }
-.name-card {
-  color: white;
-  background-color: #444955;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  text-align: end;
-  padding: 5px;
-  padding-right: 10px;
-  font-family: 'Epilogue';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 27.2518px;
-  line-height: 28px;
-  margin-top: -5px;
 
-}
 
 .imgCardDiv {
   display: flex;
@@ -212,4 +200,32 @@ form label select {
   margin-left: 10px;
   font-size: 18px;
   color: #036B52;
+}
+
+.name-card {
+  color: white;
+  background-color: #444955;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  text-align: end;
+  padding: 5px;
+  padding-right: 10px;
+  font-family: 'Epilogue';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 27.2518px;
+  line-height: 28px;
+  margin-top: -5px;
+
+}
+
+.cardsDivPai .name-card {
+  margin-left: 0px;
+  text-align: end;
+}
+.btnCard {
+  margin-left: 18px;
+  color: #036B52;
+  background-color: #2FC18C;
+  font-size: 17px;
 }

@@ -256,6 +256,7 @@ class App extends React.Component {
                     cardTrunfo={ element.cardTrunfo }
                   />
                   <button
+                    className="btnCard"
                     data-testid="delete-button"
                     type="submit"
                     onClick={ () => this.handleDeleteCard(element) }
